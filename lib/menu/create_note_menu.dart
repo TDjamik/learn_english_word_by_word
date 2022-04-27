@@ -33,8 +33,8 @@ class CreateWordMenu extends Menu {
     String stopWrite = stdin.readLineSync()!;
     content += (stopWrite + "\n");
 
-    Note note = Note(word: title, translation: content);
-    await fileService.writeFile(note, path);
+    Word word = Word(word: title, translation: content);
+    await fileService.writeFile(word, path);
     writeln("note_save".tr);
     write("\n\n\n\n\n\n");
     await Navigator.pop();

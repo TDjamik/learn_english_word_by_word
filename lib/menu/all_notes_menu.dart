@@ -1,4 +1,5 @@
-import 'dart:html';
+import 'package:learn_english_word_by_word/menu/select_delete_menu.dart';
+import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import 'dart:io';
 
 import 'package:learn_english_word_by_word/menu/view_one_note_menu.dart';

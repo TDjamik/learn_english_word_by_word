@@ -82,16 +82,10 @@ class FileService {
 
     writeln("previous_word".tr);
     writeln(word);
-    writeln("edit_note".tr);
+    writeln("edit_word".tr);
     String content = "";
-    String exit = "";
-    while (exit != "save".tr) {
-      exit = read();
-      if (exit == "save".tr) {
-        break;
-      }
-      content += (exit + "\n");
-    }
+    String exit = read();
+    content += (exit + "\n");
     word.translation = content;
     word.time = DateTime.now().toString();
     return await writeFile(word, path);

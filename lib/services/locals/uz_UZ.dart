@@ -22,4 +22,5 @@ const uzUZ = {
   'previous_word': "Avvalgi so'z:",
   'success_delete_all': "Barcha fayllar muvoffaqiyatli o'chirildi!",
   'select_file': "Katalog file lar raqamini tanlab kiriting:",
+  'edit_word' : "O'zgarishni kiriting: ",
 };

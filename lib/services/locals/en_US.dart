@@ -22,4 +22,5 @@ const enUS = {
   'previous_word': "Previous word:",
   'success_delete_all': "All files deleted successfully!",
   'select_file': "Select the directory file number and enter:",
+  'edit_word' : "Make changes: ",
 };

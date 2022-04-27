@@ -12,14 +12,17 @@ class HomeMenu extends Menu{
   Future<void> selectFunction(String selectedMenu) async {
     switch(selectedMenu) {
       case "I": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.push(CreateWordMenu());
       } break;
       case "II": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.push(AllWordsMenu());
       } break;
-      case "III": {} break;
+      case "III": {
+        write("\n\n\n");
+
+      } break;
       case "IV": exit(0);
       default: {
         writeln("error".tr);
@@ -29,7 +32,6 @@ class HomeMenu extends Menu{
 
   @override
   Future<void> build() async {
-    writeln("welcome".tr);
     writeln("I. " + "create_word".tr);
     writeln("II. " + "view_all_words".tr);
     writeln("III. " + "settings".tr);

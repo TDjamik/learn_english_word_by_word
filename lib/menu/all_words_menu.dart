@@ -25,6 +25,7 @@ class AllWordsMenu extends Menu {
       writeln("I. " + "number_word".tr);
       writeln("II. " + "delete_all".tr);
       writeln("III. " + "delete_selected".tr);
+      writeln("IV. " + "back_to_home".tr);
       String selectedMenu = read();
       await selectFunctionIf(selectedMenu, files);
     } else {
@@ -39,20 +40,23 @@ class AllWordsMenu extends Menu {
   Future<void> selectFunctionIf(String selectedMenu, List<FileSystemEntity> files) async {
     switch(selectedMenu) {
       case "I": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.push(ViewOneWordMenu(list: files));
       } break;
       case "II": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await FileService().deleteAllFile();
-        writeln("Barcha fayllar muvoffaqiyatli o'chirildi!");
+        writeln("Barcha so'zlar muvoffaqiyatli o'chirildi!");
         await Navigator.popUntil();
       } break;
       case "III": {
-        write("\n\n\n\n\n\n");
-        //hali bor
+        write("\n\n\n");
         await Navigator.push(SelectDeleteMenu(list: files));
       } break;
+      case "IV":{
+        write("\n\n\n");
+        await Navigator.popUntil();
+      }break;
       default: {
         writeln("error".tr);
       }
@@ -63,11 +67,11 @@ class AllWordsMenu extends Menu {
   Future<void> selectFunctionElse(String selectedMenu) async {
     switch(selectedMenu) {
       case "I": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.pushReplacement(CreateWordMenu());
       } break;
       case "II": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.pop();
       } break;
       default: {

@@ -1,5 +1,7 @@
 
 
+import 'dart:io';
+
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import '../models/menu_model.dart';
@@ -10,7 +12,7 @@ import '../services/io_service.dart';
 class CreateWordMenu extends Menu {
   static final String id = "/create_note_menu";
 
-  Future<void> createNote() async {
+  Future<void> createWord() async {
     FileService fileService = FileService();
     await fileService.init();
 
@@ -23,20 +25,13 @@ class CreateWordMenu extends Menu {
       path = await fileService.createFile(title);
     } catch(error) {
       writeln(error);
-      await createNote();
+      await createWord();
     }
 
     writeln("write_note".tr);
     String content = "";
-    String stopWrite = "";
-
-    while(true) {
-      stopWrite = read();
-      if(stopWrite == 'save'.tr) {
-        break;
-      }
-      content += (stopWrite + "\n");
-    }
+    String stopWrite = stdin.readLineSync()!;
+    content += (stopWrite + "\n");
 
     Note note = Note(word: title, translation: content);
     await fileService.writeFile(note, path);
@@ -48,6 +43,6 @@ class CreateWordMenu extends Menu {
   @override
   Future<void> build() async {
     writeln("Menu: " + "create_note".tr);
-    await createNote();
+    await createWord();
   }
 }

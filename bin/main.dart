@@ -19,7 +19,7 @@ void main() async {
       CreateWordMenu.id: CreateWordMenu(),
       AllWordsMenu.id: AllWordsMenu(),
       ViewOneWordMenu.id: ViewOneWordMenu(),
-      EditNoteMenu.id: EditNoteMenu(),
+      EditWordMenu.id: EditWordMenu(),
       SelectDeleteMenu.id: SelectDeleteMenu(),
     },
   );

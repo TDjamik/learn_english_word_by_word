@@ -26,7 +26,7 @@ class ViewOneWordMenu extends Menu {
     switch(selectedMenu) {
       case "I": {
         write("\n\n\n\n\n\n");
-        await Navigator.push(EditNoteMenu(path: path));
+        await Navigator.push(EditWordMenu(path: path));
       } break;
       case "II": {
         write("\n\n\n\n\n\n");

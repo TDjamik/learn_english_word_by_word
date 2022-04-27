@@ -7,7 +7,7 @@ const uzUZ = {
   'error': "Xato buyruq kiritildi",
   'new_note_name': "So\'zni ingliz tilida kiriting: ",
   'file_error': "Kiritilgan note nomi oldin yaratilgan, Iltimos qayta urunib ko'ring.",
-  'write_note': "Notega yozishingiz mumkin. (Saqlash uchun 'save' so'zini yozing): ",
+  'write_note': "Tarjimasini kiriting: ",
   'save': 'save',
   'note_save': "Note muvoffaqiyatli saqlandi!",
   'number_note': "Note raqamini kiriting",

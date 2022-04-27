@@ -80,7 +80,7 @@ class FileService {
   Future<String> updateFileFromPath(String path) async {
     Word word = await readFileFromPath(path);
 
-    writeln("previous_note".tr);
+    writeln("previous_word".tr);
     writeln(word);
     writeln("edit_note".tr);
     String content = "";

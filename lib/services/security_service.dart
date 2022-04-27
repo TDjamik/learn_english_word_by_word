@@ -1,3 +1,5 @@
+import 'data_service.dart';
+
 class SecurityService {
   final DataService _dataService = DataService();
 

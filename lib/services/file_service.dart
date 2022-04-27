@@ -1,6 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:learn_english_word_by_word/services/ext_service.dart';
+
+import '../models/note_model.dart';
+import 'io_service.dart';
+
 class FileService {
   Directory directory = Directory(Directory.current.path + "\\assets\\files");
 
@@ -104,7 +109,8 @@ class FileService {
 
   Future<void> deleteAllFile() async {
     List<FileSystemEntity> list = directory.listSync();
-    for(var item in list);
-    await item.delete();
+    for (var item in list) {
+      await item.delete();
+    }
   }
 }

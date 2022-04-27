@@ -1,9 +1,11 @@
-import 'package:note_app/models/menu_model.dart';
-import 'package:note_app/models/note_model.dart';
-import 'package:note_app/services/file_service.dart';
-import 'package:note_app/services/io_service.dart';
-import 'package:note_app/services/ext_service.dart';
-import 'package:note_app/services/navigation_service.dart';
+
+
+import 'package:learn_english_word_by_word/services/ext_service.dart';
+import 'package:learn_english_word_by_word/services/navigation_service.dart';
+import '../models/menu_model.dart';
+import '../models/note_model.dart';
+import '../services/file_service.dart';
+import '../services/io_service.dart';
 
 class CreateNoteMenu extends Menu {
   static final String id = "/create_note_menu";

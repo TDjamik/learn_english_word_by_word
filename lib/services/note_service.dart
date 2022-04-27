@@ -1,6 +1,6 @@
-import 'dart:html';
 import '../models/menu_model.dart';
 import 'lang_service.dart';
+import 'package:learn_english_word_by_word/services/navigation_service.dart';
 
 class MyApp {
   static Map<String, Menu> routeMenu = {};

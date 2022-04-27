@@ -17,8 +17,8 @@ class FileService {
     }
   }
 
-  Future<String> createFile(String title) async {
-    File file = File(directory.path + "\\$title.note");
+  Future<String> createFile(String word) async {
+    File file = File(directory.path + "\\$word");
     bool isFileCreated = await file.exists();
     if (isFileCreated) {
       /// this below code will be edited when I set language service
@@ -37,8 +37,8 @@ class FileService {
     return file.path;
   }
 
-  Future<Note> readFile(String title) async {
-    File file = File(directory.path + "\\$title.note");
+  Future<Note> readFile(String word) async {
+    File file = File(directory.path + "\\$word");
     bool isFileCreated = await file.exists();
     if (!isFileCreated) {
       ///this below code will be edited when I set language service
@@ -56,9 +56,9 @@ class FileService {
     return note;
   }
 
-  Future<String> updateFile(String title) async {
-    String path = directory.path + "\\$title.note";
-    Note note = await readFile(title);
+  Future<String> updateFile(String word) async {
+    String path = directory.path + "\\$word";
+    Note note = await readFile(word);
 
     writeln("O'zgartirmoqchi bo'lingan note:");
     writeln(note);
@@ -72,7 +72,7 @@ class FileService {
       }
       content += (exit + "\n");
     }
-    note.content = content;
+    note.translation = content;
     note.time = DateTime.now().toString();
     return await writeFile(note, path);
   }
@@ -92,13 +92,13 @@ class FileService {
       }
       content += (exit + "\n");
     }
-    note.content = content;
+    note.translation = content;
     note.time = DateTime.now().toString();
     return await writeFile(note, path);
   }
 
-  Future<void> deleteFile(String title) async {
-    File file = File(directory.path + "\\$title.note");
+  Future<void> deleteFile(String word) async {
+    File file = File(directory.path + "\\$word");
     await file.delete();
   }
 

@@ -7,7 +7,7 @@ import '../models/note_model.dart';
 import '../services/file_service.dart';
 import '../services/io_service.dart';
 
-class CreateNoteMenu extends Menu {
+class CreateWordMenu extends Menu {
   static final String id = "/create_note_menu";
 
   Future<void> createNote() async {
@@ -38,7 +38,7 @@ class CreateNoteMenu extends Menu {
       content += (stopWrite + "\n");
     }
 
-    Note note = Note(title: title, content: content);
+    Note note = Note(word: title, translation: content);
     await fileService.writeFile(note, path);
     writeln("note_save".tr);
     write("\n\n\n\n\n\n");

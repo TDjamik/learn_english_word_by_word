@@ -10,10 +10,10 @@ import '../services/file_service.dart';
 import '../services/io_service.dart';
 import 'create_note_menu.dart';
 
-class AllNotesMenu extends Menu {
+class AllWordsMenu extends Menu {
   static const String id = "all_notes_menu";
 
-  Future<void> viewNoteList() async {
+  Future<void> viewWordList() async {
     FileService fileService = FileService();
     await fileService.init();
     List<FileSystemEntity> files = fileService.directory.listSync();
@@ -40,7 +40,7 @@ class AllNotesMenu extends Menu {
     switch(selectedMenu) {
       case "I": {
         write("\n\n\n\n\n\n");
-        await Navigator.push(ViewOneNoteMenu(list: files));
+        await Navigator.push(ViewOneWordMenu(list: files));
       } break;
       case "II": {
         write("\n\n\n\n\n\n");
@@ -64,7 +64,7 @@ class AllNotesMenu extends Menu {
     switch(selectedMenu) {
       case "I": {
         write("\n\n\n\n\n\n");
-        await Navigator.pushReplacement(CreateNoteMenu());
+        await Navigator.pushReplacement(CreateWordMenu());
       } break;
       case "II": {
         write("\n\n\n\n\n\n");
@@ -78,7 +78,7 @@ class AllNotesMenu extends Menu {
 
   @override
   Future<void> build() async {
-    await viewNoteList();
+    await viewWordList();
   }
 
 }

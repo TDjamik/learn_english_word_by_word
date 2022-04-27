@@ -16,9 +16,9 @@ void main() async {
       // key: value
       // /home_menu: HomeMenu()
       HomeMenu.id: HomeMenu(),
-      CreateNoteMenu.id: CreateNoteMenu(),
-      AllNotesMenu.id: AllNotesMenu(),
-      ViewOneNoteMenu.id: ViewOneNoteMenu(),
+      CreateWordMenu.id: CreateWordMenu(),
+      AllWordsMenu.id: AllWordsMenu(),
+      ViewOneWordMenu.id: ViewOneWordMenu(),
       EditNoteMenu.id: EditNoteMenu(),
       SelectDeleteMenu.id: SelectDeleteMenu(),
     },

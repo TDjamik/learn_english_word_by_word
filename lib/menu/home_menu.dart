@@ -13,11 +13,11 @@ class HomeMenu extends Menu{
     switch(selectedMenu) {
       case "I": {
         write("\n\n\n\n\n\n");
-        await Navigator.push(CreateNoteMenu());
+        await Navigator.push(CreateWordMenu());
       } break;
       case "II": {
         write("\n\n\n\n\n\n");
-        await Navigator.push(AllNotesMenu());
+        await Navigator.push(AllWordsMenu());
       } break;
       case "III": {} break;
       case "IV": exit(0);

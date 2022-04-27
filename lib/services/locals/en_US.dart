@@ -1,5 +1,5 @@
 const enUS = {
-  'welcome' : 'Welcome to the Note App!',
+  'welcome' : 'Welcome to the MMP App!',
   'create_note': 'Create a new note.',
   'view_all_notes': "View all notes.",
   'settings': "Settings",

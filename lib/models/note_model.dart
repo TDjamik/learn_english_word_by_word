@@ -1,26 +1,26 @@
 class Note {
-  late String title;
-  late String content;
+  late String word;
+  late String translation;
   late String time;
 
-  Note({required this.title, required this.content}) {
+  Note({required this.word, required this.translation}) {
     time = DateTime.now().toString();
   }
 
   Note.fromJson(Map<String, dynamic> json) {
-    title = json["title"];
-    content = json["content"];
+    word = json["word"];
+    translation = json["translation"];
     time = json["time"];
   }
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-    'content': content,
+    'word': word,
+    'translation': translation,
     'time': time,
   };
 
   @override
   String toString() {
-    return "Title: $title\nContent: $content";
+    return "Word: $word\nTranslation: $translation";
   }
 }

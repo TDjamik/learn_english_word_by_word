@@ -7,11 +7,11 @@ import '../services/io_service.dart';
 import 'etid_note_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 
-class ViewOneNoteMenu extends Menu {
+class ViewOneWordMenu extends Menu {
   static const String id = "/view_one_note_menu";
   List<FileSystemEntity>? list;
 
-  ViewOneNoteMenu({this.list});
+  ViewOneWordMenu({this.list});
 
   Future<String> getFileFromPath(int id) async {
     FileSystemEntity fileSystemEntity = list![id - 1];

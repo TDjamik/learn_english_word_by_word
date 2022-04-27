@@ -30,8 +30,8 @@ class HomeMenu extends Menu{
   @override
   Future<void> build() async {
     writeln("welcome".tr);
-    writeln("I. " + "create_note".tr);
-    writeln("II. " + "view_all_notes".tr);
+    writeln("I. " + "create_word".tr);
+    writeln("II. " + "view_all_words".tr);
     writeln("III. " + "settings".tr);
     writeln("IV. " + "exit".tr);
     String selectedMenu = read();

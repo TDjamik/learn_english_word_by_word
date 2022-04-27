@@ -51,7 +51,7 @@ class ViewOneWordMenu extends Menu {
 
   @override
   Future<void> build() async {
-    write("enter_note_number".tr);
+    write("enter_word_number".tr);
     int noteNumber = read().toInt;
     String note = await getFileFromPath(noteNumber);
     writeln(note + "\n");

@@ -22,14 +22,14 @@ class AllWordsMenu extends Menu {
         writeln("${i + 1}. ${files[i].path.substring(files[0].path.lastIndexOf("\\") + 1)}");
       }
 
-      writeln("I. " + "number_note".tr);
+      writeln("I. " + "number_word".tr);
       writeln("II. " + "delete_all".tr);
       writeln("III. " + "delete_selected".tr);
       String selectedMenu = read();
       await selectFunctionIf(selectedMenu, files);
     } else {
       writeln("no_note".tr);
-      writeln("I. " + "create_note".tr);
+      writeln("I. " + "create_word".tr);
       writeln("II. " + "back_to_home".tr);
       String selectedMenu = read();
       await selectFunctionElse(selectedMenu);

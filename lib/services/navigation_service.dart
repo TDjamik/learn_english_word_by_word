@@ -1,5 +1,5 @@
 import '../models/menu_model.dart';
-import 'note_service.dart';
+import 'word_service.dart';
 
 class Navigator {
   static final List<Menu> _list = <Menu>[];

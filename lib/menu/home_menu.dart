@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import '../models/menu_model.dart';
 import '../services/io_service.dart';
-import 'all_notes_menu.dart';
+import 'all_words_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
-import 'create_note_menu.dart';
+import 'create_word_menu.dart';
 
 class HomeMenu extends Menu{
   static const String id = "/home_menu";

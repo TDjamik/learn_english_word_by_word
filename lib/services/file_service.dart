@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 
-import '../models/note_model.dart';
+import '../models/word_model.dart';
 import 'io_service.dart';
 
 class FileService {

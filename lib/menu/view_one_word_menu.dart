@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import '../models/menu_model.dart';
-import '../models/note_model.dart';
+import '../models/word_model.dart';
 import '../services/file_service.dart';
 import '../services/io_service.dart';
-import 'etid_note_menu.dart';
+import 'etid_word_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 
 class ViewOneWordMenu extends Menu {

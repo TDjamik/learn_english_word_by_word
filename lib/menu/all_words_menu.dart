@@ -2,13 +2,13 @@ import 'package:learn_english_word_by_word/menu/select_delete_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import 'dart:io';
 
-import 'package:learn_english_word_by_word/menu/view_one_note_menu.dart';
+import 'package:learn_english_word_by_word/menu/view_one_word_menu.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 
 import '../models/menu_model.dart';
 import '../services/file_service.dart';
 import '../services/io_service.dart';
-import 'create_note_menu.dart';
+import 'create_word_menu.dart';
 
 class AllWordsMenu extends Menu {
   static const String id = "all_notes_menu";
@@ -28,7 +28,7 @@ class AllWordsMenu extends Menu {
       String selectedMenu = read();
       await selectFunctionIf(selectedMenu, files);
     } else {
-      writeln("no_note".tr);
+      writeln("no_word".tr);
       writeln("I. " + "create_word".tr);
       writeln("II. " + "back_to_home".tr);
       String selectedMenu = read();

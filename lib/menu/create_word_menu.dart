@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import '../models/menu_model.dart';
-import '../models/note_model.dart';
+import '../models/word_model.dart';
 import '../services/file_service.dart';
 import '../services/io_service.dart';
 
@@ -31,7 +31,7 @@ class CreateWordMenu extends Menu {
     writeln("write_word".tr);
     String content = "";
     String stopWrite = stdin.readLineSync()!;
-    content += (stopWrite + "\n");
+    content += (stopWrite);
 
     Word word = Word(word: title, translation: content);
     await fileService.writeFile(word, path);

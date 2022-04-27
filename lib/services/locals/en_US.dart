@@ -13,7 +13,7 @@ const enUS = {
   'number_word': "Enter the Word number",
   'delete_all': "Delete all notes",
   'delete_selected': "Selective deletion",
-  'no_note': "No notes yet!",
+  'no_word': "No words yet!",
   'back_to_home': "Return to the main menu.",
   'enter_word_number': "Enter the Word number: ",
   "update": "Edit",

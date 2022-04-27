@@ -16,8 +16,8 @@ class ViewOneWordMenu extends Menu {
   Future<String> getFileFromPath(int id) async {
     FileSystemEntity fileSystemEntity = list![id - 1];
     String path = fileSystemEntity.path;
-    Note note = await FileService().readFileFromPath(path);
-    return note.toString();
+    Word word = await FileService().readFileFromPath(path);
+    return word.toString();
   }
 
   Future<void> selectFunction(String selectedMenu, int id) async {

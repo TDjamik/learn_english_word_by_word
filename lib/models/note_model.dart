@@ -1,13 +1,13 @@
-class Note {
+class Word {
   late String word;
   late String translation;
   late String time;
 
-  Note({required this.word, required this.translation}) {
+  Word({required this.word, required this.translation}) {
     time = DateTime.now().toString();
   }
 
-  Note.fromJson(Map<String, dynamic> json) {
+  Word.fromJson(Map<String, dynamic> json) {
     word = json["word"];
     translation = json["translation"];
     time = json["time"];

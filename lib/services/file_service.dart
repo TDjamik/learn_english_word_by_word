@@ -28,16 +28,16 @@ class FileService {
     return file.path;
   }
 
-  Future<String> writeFile(Note note, String path) async {
+  Future<String> writeFile(Word word, String path) async {
     File file = File(path);
     //CRYPTOGRAPHIC CODE => ENICODE
     ///this code will write when I set language service
-    await file.writeAsString(jsonEncode(note.toJson()));
-    await file.setLastModified(DateTime.parse(note.time));
+    await file.writeAsString(jsonEncode(word.toJson()));
+    await file.setLastModified(DateTime.parse(word.time));
     return file.path;
   }
 
-  Future<Note> readFile(String word) async {
+  Future<Word> readFile(String word) async {
     File file = File(directory.path + "\\$word");
     bool isFileCreated = await file.exists();
     if (!isFileCreated) {
@@ -45,23 +45,23 @@ class FileService {
       throw Exception("File not found");
     }
     String result = await file.readAsString();
-    Note note = Note.fromJson(jsonDecode(result));
+    Word note = Word.fromJson(jsonDecode(result));
     return note;
   }
 
-  Future<Note> readFileFromPath(String path) async {
+  Future<Word> readFileFromPath(String path) async {
     File file = File(path);
     String result = await file.readAsString();
-    Note note = Note.fromJson(jsonDecode(result));
-    return note;
+    Word word = Word.fromJson(jsonDecode(result));
+    return word;
   }
 
-  Future<String> updateFile(String word) async {
-    String path = directory.path + "\\$word";
-    Note note = await readFile(word);
+  Future<String> updateFile(String word1) async {
+    String path = directory.path + "\\$word1";
+    Word word = await readFile(word1);
 
     writeln("O'zgartirmoqchi bo'lingan note:");
-    writeln(note);
+    writeln(word);
     writeln("Yangilanishni kiriting:");
     String content = "";
     String exit = "";
@@ -72,16 +72,17 @@ class FileService {
       }
       content += (exit + "\n");
     }
-    note.translation = content;
-    note.time = DateTime.now().toString();
-    return await writeFile(note, path);
+    word.translation = content;
+    word.time = DateTime.now().toString();
+    return await writeFile(word, path);
   }
 
   Future<String> updateFileFromPath(String path) async {
-    Note note = await readFileFromPath(path);
+    Word word = await readFileFromPath(path);
 
-    writeln("previous_word".tr);
-    writeln(note);
+    writeln("previous_note".tr);
+    writeln(word);
+    writeln("edit_note".tr);
     String content = "";
     String exit = "";
     while (exit != "save".tr) {
@@ -91,9 +92,9 @@ class FileService {
       }
       content += (exit + "\n");
     }
-    note.translation = content;
-    note.time = DateTime.now().toString();
-    return await writeFile(note, path);
+    word.translation = content;
+    word.time = DateTime.now().toString();
+    return await writeFile(word, path);
   }
 
   Future<void> deleteFile(String word) async {

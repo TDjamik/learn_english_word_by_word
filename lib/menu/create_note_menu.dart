@@ -16,7 +16,7 @@ class CreateWordMenu extends Menu {
     FileService fileService = FileService();
     await fileService.init();
 
-    write("new_word_name".tr);
+    write("new_note_name".tr);
 
     String title = read();
     String path = "";
@@ -28,21 +28,21 @@ class CreateWordMenu extends Menu {
       await createWord();
     }
 
-    writeln("write_word".tr);
+    writeln("write_note".tr);
     String content = "";
     String stopWrite = stdin.readLineSync()!;
     content += (stopWrite + "\n");
 
-    Note note = Note(word: title, translation: content);
-    await fileService.writeFile(note, path);
-    writeln("word_save".tr);
+    Word word = Word(word: title, translation: content);
+    await fileService.writeFile(word, path);
+    writeln("note_save".tr);
     write("\n\n\n\n\n\n");
     await Navigator.pop();
   }
 
   @override
   Future<void> build() async {
-    writeln("Menu: " + "create_word".tr);
+    writeln("Menu: " + "create_note".tr);
     await createWord();
   }
 }

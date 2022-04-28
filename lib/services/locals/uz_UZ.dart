@@ -33,4 +33,5 @@ const uzUZ = {
   "missing_word": "So'zdan tushib qolgan harfni topish",
   "correct_answers": "To'g'ri javoblar soni",
   "percent" : "To'g'ri javoblar foizda",
+  "update_lang" : "Tilni tanlang\n",
 };

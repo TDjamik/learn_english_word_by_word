@@ -3,9 +3,14 @@ import 'package:learn_english_word_by_word/menu/test_menu.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import '../models/menu_model.dart';
 import '../services/io_service.dart';
+import '../services/setting_language.dart';
 import 'all_words_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import 'create_word_menu.dart';
+
+void font1(String value){
+  print('\x1b[51m $value \x1b[0m');
+}
 
 void font(String value){
   writeln('\x1b[7m $value \x1b[0m');
@@ -33,6 +38,8 @@ class HomeMenu extends Menu{
         await Navigator.push(TestMenu());
       } break;
       case "IV": {
+
+        await Navigator.push(SettingLanguage());
         write("\n\n\n");
 
       } break;
@@ -45,6 +52,7 @@ class HomeMenu extends Menu{
 
   @override
   Future<void> build() async {
+    font1("welcome".tr);
     font("I. " + "create_word".tr);
     font("II. " + "view_all_words".tr);
     font("III. " + "test".tr);

@@ -6,6 +6,7 @@ import 'package:learn_english_word_by_word/menu/home_menu.dart';
 import 'package:learn_english_word_by_word/models/content_model.dart';
 import 'package:learn_english_word_by_word/models/test_model.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
+import 'package:learn_english_word_by_word/services/lang_service.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import '../models/menu_model.dart';
 import '../models/word_model.dart';
@@ -22,6 +23,7 @@ void font2_2(String value){
 
 class CreateWordMenu extends Menu {
   static final String id = "/create_note_menu";
+
 
   Future<void> createWord() async {
     FileService fileService = FileService();

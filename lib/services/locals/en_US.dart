@@ -33,4 +33,5 @@ const enUS = {
   "missing_word": "Try to find missed letter from word",
   "correct_answers": "Number of correct answers",
   "percent" : "Correct answers in percentage",
+  "update_lang" : "Select a language\n",
 };

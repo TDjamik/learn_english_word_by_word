@@ -34,4 +34,5 @@ const enUS = {
   "correct_answers": "Number of correct answers",
   "percent" : "Correct answers in percentage",
   "update_lang" : "Select a language\n",
+  "which_letter": "Which letter was omitted?",
 };

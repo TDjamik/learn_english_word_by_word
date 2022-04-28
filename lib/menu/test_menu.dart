@@ -34,7 +34,7 @@ class TestMenu extends Menu {
       str = list[random.nextInt(list.length)];
       if (set.add(str)) {
         String letter = str[2];
-        print('\n\n${n + 1}.Qaysi harf kiritilishi kerak? ');
+        print('\n\n${n + 1}' '.'+ "which_letter".tr);
         str = str.replaceRange(2, 3, '..');
         print(str);
         String finder = read();

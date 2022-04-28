@@ -34,4 +34,5 @@ const uzUZ = {
   "correct_answers": "To'g'ri javoblar soni",
   "percent" : "To'g'ri javoblar foizda",
   "update_lang" : "Tilni tanlang\n",
+  "which_letter": "Qaysi harf kiritilishi kerak?",
 };

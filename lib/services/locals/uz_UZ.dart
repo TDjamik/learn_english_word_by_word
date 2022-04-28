@@ -29,4 +29,8 @@ const uzUZ = {
   "stop_to_delete" : "Amalni tugatish uchun 'save' so'zini kiriting",
   "write_description" : "so'zning tavsifini kiriting",
   "write_example" : "So'zga misol kiriting",
+  "test" : "TEST",
+  "missing_word": "So'zdan tushib qolgan harfni topish",
+  "correct_answers": "To'g'ri javoblar soni",
+  "percent" : "To'g'ri javoblar foizda",
 };

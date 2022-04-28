@@ -44,10 +44,21 @@ class AllWordsMenu extends Menu {
         await Navigator.push(ViewOneWordMenu(list: files));
       } break;
       case "II": {
-        write("\n\n\n");
-        await FileService().deleteAllFile();
-        writeln("Barcha so'zlar muvoffaqiyatli o'chirildi!");
-        await Navigator.popUntil();
+        writeln('sure'.tr);
+        writeln('yes'.tr);
+        writeln('no'.tr);
+        String sure = read();
+        if(sure == 'yes'.tr) {
+          write("\n\n\n");
+          await FileService().deleteAllFile();
+          writeln("Barcha so'zlar muvoffaqiyatli o'chirildi!");
+          await Navigator.popUntil();
+        }else if(sure == 'no'.tr){
+          write("\n\n\n");
+          await Navigator.push(AllWordsMenu());
+        }else{
+          writeln("error".tr);
+        }
       } break;
       case "III": {
         write("\n\n\n");

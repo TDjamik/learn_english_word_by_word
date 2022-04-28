@@ -30,23 +30,22 @@ class FileService {
 
   Future<String> writeFile(Word word, String path) async {
     File file = File(path);
-    //CRYPTOGRAPHIC CODE => ENICODE
     ///this code will write when I set language service
     await file.writeAsString(jsonEncode(word.toJson()));
     await file.setLastModified(DateTime.parse(word.time));
     return file.path;
   }
 
-  Future<Word> readFile(String word) async {
-    File file = File(directory.path + "\\$word");
+  Future<Word> readFile(String note) async {
+    File file = File(directory.path + "\\$note");
     bool isFileCreated = await file.exists();
     if (!isFileCreated) {
       ///this below code will be edited when I set language service
       throw Exception("File not found");
     }
     String result = await file.readAsString();
-    Word note = Word.fromJson(jsonDecode(result));
-    return note;
+    Word word = Word.fromJson(jsonDecode(result));
+    return word;
   }
 
   Future<Word> readFileFromPath(String path) async {
@@ -56,26 +55,7 @@ class FileService {
     return word;
   }
 
-  Future<String> updateFile(String word1) async {
-    String path = directory.path + "\\$word1";
-    Word word = await readFile(word1);
 
-    writeln("O'zgartirmoqchi bo'lingan note:");
-    writeln(word);
-    writeln("Yangilanishni kiriting:");
-    String content = "";
-    String exit = "";
-    while (exit != "Save") {
-      exit = read();
-      if (exit == "Save") {
-        break;
-      }
-      content += (exit + "\n");
-    }
-    word.translation = content;
-    word.time = DateTime.now().toString();
-    return await writeFile(word, path);
-  }
 
   Future<String> updateFileFromPath(String path) async {
     Word word = await readFileFromPath(path);
@@ -83,9 +63,9 @@ class FileService {
     writeln("previous_word".tr);
     writeln(word);
     writeln("edit_word".tr);
-    String content = "";
-    String exit = read();
-    content += (exit + "\n");
+    String content = stdin.readLineSync()!;
+    // String exit = read();
+    // content += (exit + "\n");
     word.translation = content;
     word.time = DateTime.now().toString();
     return await writeFile(word, path);

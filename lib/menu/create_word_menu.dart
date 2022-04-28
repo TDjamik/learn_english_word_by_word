@@ -2,6 +2,8 @@
 
 import 'dart:io';
 
+import 'package:learn_english_word_by_word/models/content_model.dart';
+import 'package:learn_english_word_by_word/models/test_model.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import '../models/menu_model.dart';
@@ -16,27 +18,44 @@ class CreateWordMenu extends Menu {
     FileService fileService = FileService();
     await fileService.init();
 
+
     write("new_word_name".tr);
 
-    String title = read();
+    String words = read();
     String path = "";
 
     try{
-      path = await fileService.createFile(title);
+      path = await fileService.createFile(words);
     } catch(error) {
       writeln(error);
       await createWord();
     }
 
     writeln("write_word".tr);
-    String content = "";
+    String translate = "";
     String stopWrite = stdin.readLineSync()!;
-    content += (stopWrite);
+    translate += (stopWrite);
 
-    Word word = Word(word: title, translation: content);
+    List enList = [];
+    enList.add(words);
+    List uzList = [];
+    uzList.add(translate);
+    print(uzList);
+    print(enList);
+
+
+    writeln("write_description".tr);
+    String description = read();
+
+    writeln("write_example".tr);
+    String example = read();
+    Content content = Content(description: description, example: example);
+
+
+    Word word = Word(word: words, translation: translate, content: content);
     await fileService.writeFile(word, path);
     writeln("word_save".tr);
-    write("\n\n\n\n\n\n");
+    write("\n\n\n");
     await Navigator.pop();
   }
 

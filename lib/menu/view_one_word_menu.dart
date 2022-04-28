@@ -25,21 +25,21 @@ class ViewOneWordMenu extends Menu {
     String path = fileSystemEntity.path;
     switch(selectedMenu) {
       case "I": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.push(EditWordMenu(path: path));
       } break;
       case "II": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         FileService fileService = FileService();
         await fileService.deleteFileFromPath(path);
         await Navigator.pop();
       } break;
       case "III": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.pop();
       } break;
       case "IV": {
-        write("\n\n\n\n\n\n");
+        write("\n\n\n");
         await Navigator.popUntil();
       } break;
       default: {

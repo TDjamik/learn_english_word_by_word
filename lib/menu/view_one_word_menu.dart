@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'package:learn_english_word_by_word/menu/create_word_menu.dart';
+import 'package:learn_english_word_by_word/menu/home_menu.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import '../models/menu_model.dart';
 import '../models/word_model.dart';
@@ -43,7 +45,7 @@ class ViewOneWordMenu extends Menu {
         await Navigator.popUntil();
       } break;
       default: {
-        writeln("error".tr);
+        redFont("error".tr);
       }
     }
   }
@@ -54,11 +56,11 @@ class ViewOneWordMenu extends Menu {
     write("enter_word_number".tr);
     int noteNumber = read().toInt;
     String note = await getFileFromPath(noteNumber);
-    writeln(note + "\n");
-    writeln("I. " + "update".tr);
-    writeln("II. " + "delete".tr);
-    writeln("III. " + "back_to".tr);
-    writeln("IV. " + "back_to_home".tr);
+    font2(note + "\n");
+    font2("I. " + "update".tr);
+    font2("II. " + "delete".tr);
+    font2("III. " + "back_to".tr);
+    font2("IV. " + "back_to_home".tr);
     String selectedMenu = read();
     await selectFunction(selectedMenu, noteNumber);
   }

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:learn_english_word_by_word/menu/create_word_menu.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import '../models/menu_model.dart';
 import '../services/io_service.dart';
@@ -12,8 +13,8 @@ class SelectDeleteMenu extends Menu {
 
   @override
   Future<void> build() async {
-    writeln("select_file".tr);
-    writeln("stop_to_delete".tr);
+    font2("select_file".tr);
+    font2("stop_to_delete".tr);
     List<int> selectedList = [];
     String stopWrite = "";
 
@@ -29,7 +30,7 @@ class SelectDeleteMenu extends Menu {
         await list![item - 1].delete();
       }
     }
-    writeln("success_delete_all".tr);
+    font2("success_delete_all".tr);
   }
 
 }

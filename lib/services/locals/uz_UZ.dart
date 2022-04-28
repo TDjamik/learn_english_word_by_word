@@ -27,7 +27,7 @@ const uzUZ = {
   'yes' : "ha",
   'no' : "yo'q",
   "stop_to_delete" : "Amalni tugatish uchun 'save' so'zini kiriting",
-  "write_description" : "so'zning tavsifini kiriting",
+  "write_description" : "So'zning tavsifini kiriting",
   "write_example" : "So'zga misol kiriting",
   "test" : "TEST",
   "missing_word": "So'zdan tushib qolgan harfni topish",

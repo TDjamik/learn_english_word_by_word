@@ -7,6 +7,14 @@ import 'all_words_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import 'create_word_menu.dart';
 
+void font(String value){
+  writeln('\x1b[7m $value \x1b[0m');
+}
+
+void redFont(String value){
+  writeln('\t\x1b[31m $value\x1b[0m');
+}
+
 class HomeMenu extends Menu{
   static const String id = "/home_menu";
 
@@ -37,11 +45,11 @@ class HomeMenu extends Menu{
 
   @override
   Future<void> build() async {
-    writeln("I. " + "create_word".tr);
-    writeln("II. " + "view_all_words".tr);
-    writeln("III. " + "test".tr);
-    writeln("IV. " + "settings".tr);
-    writeln("V. " + "exit".tr);
+    font("I. " + "create_word".tr);
+    font("II. " + "view_all_words".tr);
+    font("III. " + "test".tr);
+    font("IV. " + "settings".tr);
+    font("V. " + "exit".tr);
     String selectedMenu = read();
     await selectFunction(selectedMenu);
   }

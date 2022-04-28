@@ -27,7 +27,7 @@ const enUS = {
   'yes' : "yes",
   'no' : "no",
   "stop_to_delete" : "Enter the word 'save' to complete the operation",
-  "write_description" : "Введите описание слова",
+  "write_description" : "Enter description: ",
   "write_example" : "enter example to word",
   "test" : "TEST",
   "missing_word": "Try to find missed letter from word",

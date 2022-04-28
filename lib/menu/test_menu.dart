@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:learn_english_word_by_word/menu/create_word_menu.dart';
+import 'package:learn_english_word_by_word/menu/home_menu.dart';
 import 'package:learn_english_word_by_word/models/menu_model.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import 'package:learn_english_word_by_word/services/io_service.dart';
@@ -26,28 +28,28 @@ class TestMenu extends Menu {
       str = list[random.nextInt(list.length)];
       if (set.add(str)) {
         String letter = str[2];
-          print('\n\n${n+1}.Qaysi harf kiritilishi kerak? ');
+          font2('\n\n${n+1}.Qaysi harf kiritilishi kerak? ');
           str = str.replaceRange(2, 3, '..');
           print(str);
           String finder = read();
           if (finder == letter) {
-            print('\t\tCorrect ✅');
+            font2('\t\tCorrect ✅');
             t++;
           } else {
-            print('\t\tWRONG ❌');
+            redFont('\t\tWRONG ❌');
           }
           n++;
         }
     }
-    print("\n\t\t\t" + "correct_answers".tr + "=>" + " $t");
-    print('\t\t\t' + 'percent'.tr + '=> ' + ((t * 100) / list.length).toStringAsFixed(2) + '%'+ '\n\n\n');
+    font2("\n\t\t\t" + "correct_answers".tr + "=>" + " $t");
+    font2('\t\t\t' + 'percent'.tr + '=> ' + ((t * 100) / list.length).toStringAsFixed(2) + '%'+ '\n\n\n');
 
     return str;
   }
 
   @override
   Future<void> build() async {
-    writeln("Menu: " + "missing_word".tr);
+    font2("Menu: " + "missing_word".tr);
     missingLetter();
   }
 

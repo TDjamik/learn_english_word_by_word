@@ -1,3 +1,4 @@
+import 'package:learn_english_word_by_word/menu/home_menu.dart';
 import 'package:learn_english_word_by_word/menu/select_delete_menu.dart';
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import 'dart:io';
@@ -19,19 +20,19 @@ class AllWordsMenu extends Menu {
     List<FileSystemEntity> files = fileService.directory.listSync();
     if(files.isNotEmpty) {
       for(int i = 0; i < files.length; i++) {
-        writeln("${i + 1}. ${files[i].path.substring(files[0].path.lastIndexOf("\\") + 1)}");
+        font2("${i + 1}. ${files[i].path.substring(files[0].path.lastIndexOf("\\") + 1)}");
       }
 
-      writeln("I. " + "number_word".tr);
-      writeln("II. " + "delete_all".tr);
-      writeln("III. " + "delete_selected".tr);
-      writeln("IV. " + "back_to_home".tr);
+      font("I. " + "number_word".tr);
+      font("II. " + "delete_all".tr);
+      font("III. " + "delete_selected".tr);
+      font("IV. " + "back_to_home".tr);
       String selectedMenu = read();
       await selectFunctionIf(selectedMenu, files);
     } else {
-      writeln("no_word".tr);
-      writeln("I. " + "create_word".tr);
-      writeln("II. " + "back_to_home".tr);
+      font2("no_word".tr);
+      font("I. " + "create_word".tr);
+      font("II. " + "back_to_home".tr);
       String selectedMenu = read();
       await selectFunctionElse(selectedMenu);
     }
@@ -44,20 +45,20 @@ class AllWordsMenu extends Menu {
         await Navigator.push(ViewOneWordMenu(list: files));
       } break;
       case "II": {
-        writeln('sure'.tr);
-        writeln('yes'.tr);
-        writeln('no'.tr);
+        font2('sure'.tr);
+        redFont('yes'.tr);
+        font2('no'.tr);
         String sure = read();
         if(sure == 'yes'.tr) {
           write("\n\n\n");
           await FileService().deleteAllFile();
-          writeln("Barcha so'zlar muvoffaqiyatli o'chirildi!");
+          font2("Barcha so'zlar muvoffaqiyatli o'chirildi!");
           await Navigator.popUntil();
         }else if(sure == 'no'.tr){
           write("\n\n\n");
           await Navigator.push(AllWordsMenu());
         }else{
-          writeln("error".tr);
+          redFont("error".tr);
         }
       } break;
       case "III": {
@@ -69,7 +70,7 @@ class AllWordsMenu extends Menu {
         await Navigator.popUntil();
       }break;
       default: {
-        writeln("error".tr);
+        redFont("error".tr);
       }
     }
   }
@@ -86,7 +87,7 @@ class AllWordsMenu extends Menu {
         await Navigator.pop();
       } break;
       default: {
-        writeln("error".tr);
+        redFont("error".tr);
       }
     }
   }

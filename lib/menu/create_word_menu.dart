@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:learn_english_word_by_word/menu/home_menu.dart';
 import 'package:learn_english_word_by_word/models/content_model.dart';
 import 'package:learn_english_word_by_word/models/test_model.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
@@ -11,6 +12,14 @@ import '../models/word_model.dart';
 import '../services/file_service.dart';
 import '../services/io_service.dart';
 
+void font2(String value){
+  writeln('\t\x1b[36m $value\x1b[0m');
+}
+
+void font2_2(String value){
+  write('\t\x1b[36m $value\x1b[0m');
+}
+
 class CreateWordMenu extends Menu {
   static final String id = "/create_note_menu";
 
@@ -19,7 +28,7 @@ class CreateWordMenu extends Menu {
     await fileService.init();
 
 
-    write("new_word_name".tr);
+    font2_2("new_word_name".tr);
 
     String words = read();
     String path = "";
@@ -31,7 +40,7 @@ class CreateWordMenu extends Menu {
       await createWord();
     }
 
-    writeln("write_word".tr);
+    font2("write_word".tr);
     String translate = "";
     String stopWrite = stdin.readLineSync()!;
     translate += (stopWrite);
@@ -44,24 +53,24 @@ class CreateWordMenu extends Menu {
     print(enList);
 
 
-    writeln("write_description".tr);
+    font2("write_description".tr);
     String description = read();
 
-    writeln("write_example".tr);
+    font2("write_example".tr);
     String example = read();
     Content content = Content(description: description, example: example);
 
 
     Word word = Word(word: words, translation: translate, content: content);
     await fileService.writeFile(word, path);
-    writeln("word_save".tr);
+    font2("word_save".tr);
     write("\n\n\n");
     await Navigator.pop();
   }
 
   @override
   Future<void> build() async {
-    writeln("Menu: " + "create_word".tr);
+    font2("Menu: " + "create_word".tr);
     await createWord();
   }
 }

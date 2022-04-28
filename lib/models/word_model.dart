@@ -24,7 +24,7 @@ class Word {
     'content': content.toJson(),
     'time': time,
   };
-
+  // ovveriding
   @override
   String toString() {
     return "Word: $word\nTranslation: $translation\n$content";

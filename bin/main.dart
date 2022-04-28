@@ -7,12 +7,21 @@ import 'package:learn_english_word_by_word/menu/test_menu.dart';
 import 'package:learn_english_word_by_word/menu/view_one_word_menu.dart';
 import 'package:learn_english_word_by_word/services/lang_service.dart';
 import 'package:learn_english_word_by_word/services/word_service.dart';
+
+void font1(String value){
+print('\x1b[51m $value \x1b[0m');
+}
+
+
+
+
+
 void main() async {
   // print(TestMenu().adding());
   // TestMenu testMenu = TestMenu();
   // testMenu.missingLetter();
 
-
+font1("MMP appga xush kelibsiz");
   MyApp(
     home: HomeMenu(),
     locale: await LangService.currentLanguage(),

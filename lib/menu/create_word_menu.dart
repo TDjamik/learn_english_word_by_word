@@ -2,10 +2,10 @@
 
 import 'dart:io';
 
-import 'package:learn_english_word_by_word/menu/home_menu.dart';
+
 import 'package:learn_english_word_by_word/models/content_model.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
-import 'package:learn_english_word_by_word/services/lang_service.dart';
+
 import 'package:learn_english_word_by_word/services/navigation_service.dart';
 import '../models/menu_model.dart';
 import '../models/word_model.dart';
@@ -41,7 +41,7 @@ class CreateWordMenu extends Menu {
       await createWord();
     }
 
-    font2("write_word".tr);
+    font2_2("write_word".tr);
     String translate = "";
     String stopWrite = stdin.readLineSync()!;
     translate += (stopWrite);
@@ -50,14 +50,14 @@ class CreateWordMenu extends Menu {
     enList.add(words);
     List uzList = [];
     uzList.add(translate);
-    print(uzList);
-    print(enList);
+    // print(uzList);
+    // print(enList);
 
 
-    font2("write_description".tr);
+    font2_2("write_description".tr);
     String description = read();
 
-    font2("write_example".tr);
+    font2_2("write_example".tr);
     String example = read();
     Content content = Content(description: description, example: example);
 

@@ -11,6 +11,7 @@ import '../models/menu_model.dart';
 import '../models/word_model.dart';
 import '../services/file_service.dart';
 import '../services/io_service.dart';
+import 'home_menu.dart';
 
 void font2(String value){
   writeln('\t\x1b[36m $value\x1b[0m');
@@ -67,6 +68,7 @@ class CreateWordMenu extends Menu {
     font2("word_save".tr);
     write("\n\n\n");
     await Navigator.pop();
+    await Navigator.push(HomeMenu());
   }
 
   @override

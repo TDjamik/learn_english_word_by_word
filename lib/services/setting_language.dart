@@ -11,17 +11,11 @@ import 'package:learn_english_word_by_word/services/lang_service.dart';
 import 'io_service.dart';
 
 class SettingLanguage extends Menu {
-  @override
-  Future<void> build() async {
-    DataService dataService = DataService();
-    await dataService.init();
-    font2("I. " "UZ");
-    font2("II. " "EN");
-    font2("III. " "RU");
 
-    font2_2("update_lang".tr);
 
-    String selectedMenu = read();
+
+  Future<void>settingLang(String selectedMenu) async {
+
     switch (selectedMenu) {
       case "I":
         {
@@ -47,6 +41,19 @@ class SettingLanguage extends Menu {
           writeln("error".tr);
         }
     }
+  }
+
+    @override
+    Future<void> build() async {
+      DataService dataService = DataService();
+      await dataService.init();
+      font2_2("update_lang".tr);
+      font2("I. " "UZ");
+      font2("II. " "EN");
+      font2("III. " "RU");
+      String selectedMenu = read();
+      await settingLang(selectedMenu);
     await dataService.storeData(key: "language", value: LangService.language.name);
+
   }
 }

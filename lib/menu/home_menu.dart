@@ -38,10 +38,8 @@ class HomeMenu extends Menu{
         await Navigator.push(TestMenu());
       } break;
       case "IV": {
-
-        await Navigator.push(SettingLanguage());
         write("\n\n\n");
-
+        await Navigator.push(SettingLanguage());
       } break;
       case "V": exit(0);
       default: {

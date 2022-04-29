@@ -2,7 +2,7 @@ const uzUZ = {
   'welcome' : 'MMP Appga Xush Kelibsiz!',
   'create_word': 'Yangi so\'z qo\'shish.',
   'view_all_words': "Barcha so'zlarni ko'rish.",
-  'settings': "Sozlamalar",
+  'settings': "Tilni o'zgartirish",
   'exit': "Dasturdan chiqish.",
   'error': "Xato buyruq kiritildi",
   'new_word_name': "So'zni ingliz tilida kiriting: ",

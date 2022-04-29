@@ -2,7 +2,7 @@ const enUS = {
   'welcome' : 'Welcome to the MMP App!',
   'create_word': 'Create a new word.',
   'view_all_words': "View all words.",
-  'settings': "Settings",
+  'settings': "Changing language",
   'exit': "Exit the program.",
   'error': "Error command entered",
   'new_word_name': "Enter a name for the new word: ",

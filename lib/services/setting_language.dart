@@ -7,6 +7,7 @@ import 'package:learn_english_word_by_word/models/menu_model.dart';
 import 'package:learn_english_word_by_word/services/data_service.dart';
 import 'package:learn_english_word_by_word/services/ext_service.dart';
 import 'package:learn_english_word_by_word/services/lang_service.dart';
+import 'package:learn_english_word_by_word/services/navigation_service.dart';
 
 import 'io_service.dart';
 
@@ -40,7 +41,13 @@ class SettingLanguage extends Menu {
         {
           writeln("error".tr);
         }
+
     }
+
+
+
+    Navigator.popUntil();
+
   }
 
     @override
